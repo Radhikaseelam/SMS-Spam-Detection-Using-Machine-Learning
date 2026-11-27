@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AI SMS Spam Detection</title>
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>AI SMS Spam Detection</h1>
+
+        <p>Detect unwanted SMS messages using Machine Learning</p>
+
+        <form method="POST">
+
+            <textarea name="message"
+                placeholder="Enter your SMS message here..."
+                required>{{ message or '' }}</textarea>
+
+            <button type="submit">Check Message</button>
+
+        </form>
+
+        {% if result %}
+            <div class="result {{ result_class }}">
+                {{ result }}
+            </div>
+        {% endif %}
+
+        <p>Powered by Python and Machine Learning</p>
+
+    </div>
+
+</body>
+</html>
